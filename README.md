@@ -120,7 +120,8 @@ Open http://localhost:5500.
 Accuracy is measured on <describe the evaluation: for example a train/test split of `Training.csv`>.
 ## Screenshots
 <img width="1912" height="942" alt="image" src="https://github.com/user-attachments/assets/0cbd3bb7-1979-4a8d-b09f-17ed886d2fc2" />
-![Uploading image.png…]()
+<img width="1916" height="946" alt="image" src="https://github.com/user-attachments/assets/b4798175-94cb-47b0-868d-d6710944bc63" />
+
 
 
 ## Known Limitations
