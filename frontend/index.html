@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f8fa">
+    <title>CarePath | Symptom checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="CarePath home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <path d="M16 27s-10-6.1-10-13a5.7 5.7 0 0 1 10-3.7A5.7 5.7 0 0 1 26 14c0 6.9-10 13-10 13Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+                        <path d="M9.5 16h4l1.8-3.5 2.5 7 1.7-3.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span>CarePath<span class="brand-period">.</span></span>
+            </a>
+        </header>
+
+        <main>
+            <section class="intro">
+                <div class="intro-copy">
+                    <p class="eyebrow">SYMPTOM ASSESSMENT</p>
+                    <h1>Your health, <span>in focus.</span></h1>
+                    <p class="intro-text">Select at least three symptoms to see model estimates.</p>
+                </div>
+            </section>
+
+            <section class="panel form-panel" aria-labelledby="form-title">
+                    <div class="panel-heading">
+                        <div>
+                            <h2 id="form-title">Patient details</h2>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="name">Your name <span class="optional">(optional)</span></label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Alex Morgan" autocomplete="name">
+                    </div>
+
+                    <fieldset class="symptom-fields">
+                        <legend>Symptoms</legend>
+                        <div class="symptom-grid">
+                            <div class="field-group">
+                                <label for="symptom1">Symptom 1</label>
+                                <select id="symptom1">
+                                    <option value="" selected>Select a symptom</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="symptom2">Symptom 2</label>
+                                <select id="symptom2">
+                                    <option value="" selected>Select a symptom</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="symptom3">Symptom 3</label>
+                                <select id="symptom3">
+                                    <option value="" selected>Select a symptom</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="symptom4">Symptom 4 <span class="optional">(optional)</span></label>
+                                <select id="symptom4">
+                                    <option value="" selected>Choose another (optional)</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="symptom5">Symptom 5 <span class="optional">(optional)</span></label>
+                                <select id="symptom5">
+                                    <option value="" selected>Choose another (optional)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="actions">
+                        <button class="button button-secondary" type="button" onclick="clearFields()">Clear form</button>
+                    </div>
+
+                    <div class="model-section">
+                        <h2 class="model-heading">Choose a prediction model</h2>
+                        <div class="model-grid">
+                            <article class="model-card">
+                                <div class="model-icon icon-blue">DT</div>
+                                <div class="model-info">
+                                    <h3>Decision Tree</h3>
+                                </div>
+                                <button class="button model-button" type="button" onclick="predict('DecisionTree')">Get prediction <span aria-hidden="true">→</span></button>
+                                <div class="model-result" id="resultDecisionTree" aria-live="polite"></div>
+                            </article>
+                            <article class="model-card">
+                                <div class="model-icon icon-violet">RF</div>
+                                <div class="model-info">
+                                    <h3>Random Forest</h3>
+                                </div>
+                                <button class="button model-button" type="button" onclick="predict('RandomForest')">Get prediction <span aria-hidden="true">→</span></button>
+                                <div class="model-result" id="resultRandomForest" aria-live="polite"></div>
+                            </article>
+                            <article class="model-card">
+                                <div class="model-icon icon-green">NB</div>
+                                <div class="model-info">
+                                    <h3>Naive Bayes</h3>
+                                </div>
+                                <button class="button model-button" type="button" onclick="predict('NaiveBayes')">Get prediction <span aria-hidden="true">→</span></button>
+                                <div class="model-result" id="resultNaiveBayes" aria-live="polite"></div>
+                            </article>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="finalPrediction" class="final-prediction" aria-live="polite"></section>
+            <p class="medical-note"><strong>Not a diagnosis.</strong> If symptoms are severe or worsening, contact a healthcare professional or emergency services.</p>
+        </main>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
