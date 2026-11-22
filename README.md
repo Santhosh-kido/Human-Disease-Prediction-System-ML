@@ -118,6 +118,10 @@ Open http://localhost:5500.
 | Gaussian Naive Bayes | <value> |
 
 Accuracy is measured on <describe the evaluation: for example a train/test split of `Training.csv`>.
+## Screenshots
+<img width="1912" height="942" alt="image" src="https://github.com/user-attachments/assets/0cbd3bb7-1979-4a8d-b09f-17ed886d2fc2" />
+![Uploading image.png…]()
+
 
 ## Known Limitations
 
